@@ -3,26 +3,26 @@
 /* ------------------------------------------ */
 
 /* Selecciona el elemento <body> */
-{
+body{
   margin: 40px 0 0;
   font-family: sans-serif;
   text-align: center;
 }
 
 /* Selecciona todos los elementos <p> */
-{
+p {
   margin: 2rem auto;
 }
 
 /* Selecciona los elementos <p> que son hijos directos del elemento <div> y que no esten en segunda posición. */
-{
+div > p:not(:nth-child(2)){
   width: 45%;
   border: 3px solid #ccc;
   padding: 1.5rem;
 }
 
 /* Selecciona solo el primer elemento <p> que es hijo directo del elemento <div> */
-{
+div > p:first-child{
   border-style: dashed;
   border-radius: 10px;
   margin-bottom: 4rem;
@@ -30,14 +30,14 @@
 }
 
 /* Selecciona solamente el segundo elemento <p> */
-{
+p:nth-child(2){
   padding: 2rem 10rem;
   background-color: rgb(252, 151, 0);
   color: #fff;
 }
 
 /* Selecciona solamente el tercer elemento <p> */
-{
+p:nth-child(3){
   position: relative;
   margin-bottom: 3.5rem;
   border-radius: 100px;
@@ -47,7 +47,7 @@
 }
 
 /* Selecciona el pseudo-elemento ::after del tercer elemento <p> */
-{
+p:nth-child(3)::after{
   content: "";
   position: absolute;
   top: 100%;
@@ -61,14 +61,14 @@
 }
 
 /* Selecciona el elemento <form> */
-{
+form{
   width: 400px;
   margin: 3rem auto;
   text-align: left;
 }
 
 /* Selecciona el elemento <div> descendente del elemento <form> */
-{
+form > div{
   position: relative;
   display: flex;
   align-items: center;
@@ -81,12 +81,12 @@
 }
 
 /* Selecciona todos los elementos <label> */
-{
+label{
   width: 7rem;
 }
 
 /* Selecciona el pseudo-elemento ::after de todos los elementos <label> */
-{
+label::after{
   position: absolute;
   top: 50%;
   right: -23px;
@@ -99,7 +99,8 @@
     - <label> tiene el contenido "Nombre".
     - <label> es adyacente al elemento <input>.
     - Cuando el elemento <input> tenga el foco del navegador. */
-{
+
+label[for="nombre"]::after, label[for="nombre"]:focus {
   content: "😎";
 }
 
@@ -107,7 +108,8 @@
     - <label> tiene el contenido "E-mail".
     - <label> es adyacente al elemento <input>.
     - Cuando el elemento <input> tenga el foco del navegador. */
-{
+
+label[for="email"]::after, label[for="email"]:focus {
   content: "🤔";
 }
 
